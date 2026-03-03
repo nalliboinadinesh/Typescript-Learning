@@ -195,3 +195,46 @@ mySavingsAccount.deposit(500);
 console.log(mySavingsAccount.balance);
 mySavingsAccount.withdraw(200);
 console.log(mySavingsAccount.balance);
+
+//generic classes
+
+class Pair<T>{
+  constructor(public key: string, public value: T) {
+    this.key = key;
+    this.value = value;
+  }
+}
+const stringPair = new Pair<string>("name", "Dinesh");
+console.log(stringPair.key, stringPair.value);
+const numberPair = new Pair<number>("age", 20);
+console.log(numberPair.key, numberPair.value);
+
+//generic functions
+function swap<T, U>(a: T, b: U): [U, T] {
+  return [b, a];
+} 
+
+console.log(swap<string, number>("Dinesh", 20));
+
+// generic interfaces
+
+interface userInfo<T>{
+  name: string;
+  age: number;
+  data: T;
+}
+
+const user1: userInfo<{ email: string }> = {
+  name: "Dinesh",
+  age: 20,
+  data: {
+    email: "dinesh@example.com"
+  }
+};
+console.log(user1); 
+const user2: userInfo<string[]> = { 
+  name: "Nalliboina",
+  age: 25,
+  data: ["JavaScript", "TypeScript"]
+};
+console.log(user2);

@@ -103,4 +103,22 @@ mySavingsAccount.deposit(500);
 console.log(mySavingsAccount.balance);
 mySavingsAccount.withdraw(200);
 console.log(mySavingsAccount.balance);
+class Pair {
+    key;
+    value;
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
+        this.key = key;
+        this.value = value;
+    }
+}
+const stringPair = new Pair("name", "Dinesh");
+console.log(stringPair.key, stringPair.value);
+const numberPair = new Pair("age", 20);
+console.log(numberPair.key, numberPair.value);
+function swap(a, b) {
+    return [b, a];
+}
+console.log(swap("Dinesh", 20));
 //# sourceMappingURL=index.js.map
